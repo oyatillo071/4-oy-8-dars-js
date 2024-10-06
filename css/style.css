@@ -34,9 +34,8 @@ button {
   background-color: blue;
   border: none;
   padding: 10px 40px;
-  margin-bottom: 20px;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
+  margin-block: 20px;
+  border-radius: 12px;
   cursor: pointer;
 }
 
@@ -52,9 +51,9 @@ form {
 
 input {
   padding: 10px;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  border-radius: 12px;
   border: 1px solid gray;
+  margin-block: 5px;
 }
 
 .answer--wrapper {
@@ -62,7 +61,7 @@ input {
   background-color: transparent;
   padding: 10px 80px 40px;
   border-radius: 10px;
-  margin-block: 40px;
+  margin-block: 10px;
   position: relative;
 }
 

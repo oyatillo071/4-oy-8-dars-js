@@ -455,7 +455,7 @@ document.getElementById('fiveteen--btn').addEventListener('click', function () {
                 fiveteenAnswer += fiveteenCounter + " ";
                 fiveteenCounter--;
 
-            } while (fiveteenCounter >=1);
+            } while (fiveteenCounter >= 1);
             break;
 
         default:
@@ -470,4 +470,434 @@ document.getElementById('fiveteen--btn').addEventListener('click', function () {
     document.getElementById('fiveteen--close').addEventListener('click', function () {
         document.getElementById('fiveteen--answer').innerHTML = "";
     })
+});
+
+
+// 16-mashq **Masala**: Foydalanuvchi musbat son kiritmaguncha, 
+// undan son  kiritishni talab qiladigan `while` sikli tuzing.
+
+document.getElementById('sixteen--btn').addEventListener('click', function () {
+    let sixteenSwitch = document.getElementById('sixteen--value').value;
+    let sixteenAnswer = " ";
+    let sixteenChecker = true;
+    let sixteenInput = 0;
+
+    switch (sixteenSwitch) {
+        case 1:
+        case "1":
+
+            while (sixteenChecker) {
+
+                sixteenInput = +prompt("Son kiriting:");
+                if (sixteenInput >= 0) {
+                    sixteenAnswer += " " + sixteenInput + " ";
+                } else {
+                    sixteenChecker = false;
+                }
+
+            }
+            break;
+
+        case 2:
+        case "2":
+
+
+            do {
+                sixteenInput = +prompt("Son kiriting:");
+                if (sixteenInput >= 0) {
+                    sixteenAnswer += " " + sixteenInput + " ";
+                } else {
+                    sixteenChecker = false;
+                }
+
+            } while (sixteenChecker);
+
+            break;
+        default:
+            sixteenAnswer = "Xato qiymat kiritildi 1 yoki 2 kiriting:";
+            break;
+
+    }
+
+
+
+    document.getElementById('sixteen--answer').innerHTML = "Kiritilgan sonlar :" + "<br>" + sixteenAnswer;
+    document.getElementById('sixteen--close').addEventListener('click', function () {
+        document.getElementById('sixteen--answer').innerHTML = "";
+    })
+});
+
+
+
+// 17-mashq **Masala**: 1 dan 20 gacha bo‘lgan juft sonlarni `while`
+//  sikli yordamida chiqarib bering.
+
+document.getElementById('seventeen--btn').addEventListener('click', function () {
+    let seventeenSwitch = document.getElementById('seventeen--value').value;
+    let seventeenAnswer = " ";
+    let seventeenCounter = 1;
+
+    switch (seventeenSwitch) {
+        case 1:
+        case "1":
+
+            while (seventeenCounter <= 20) {
+
+                if (seventeenCounter % 2 == 0) {
+                    seventeenAnswer += " " + seventeenCounter + " ";
+                }
+                seventeenCounter++;
+            }
+            break;
+
+        case 2:
+        case "2":
+
+
+            do {
+                if (seventeenCounter % 2 == 0) {
+                    seventeenAnswer += " " + seventeenCounter + " ";
+                }
+                seventeenCounter++;
+            } while (seventeenCounter <= 20);
+
+            break;
+        default:
+            seventeenAnswer = "Xato qiymat kiritildi 1 yoki 2 kiriting:";
+            break;
+
+    }
+
+    document.getElementById('seventeen--answer').innerHTML = "Kiritilgan sonlar :" + "<br>" + seventeenAnswer;
+    document.getElementById('seventeen--close').addEventListener('click', function () {
+        document.getElementById('seventeen--answer').innerHTML = "";
+    })
+});
+
+
+// 18-mashq **Masala**: Berilgan sonning barcha raqamlarini ajratib,
+//  ularning yig‘indisini `while` sikli yordamida toping. Masalan, 
+// 123 soni uchun yig‘indi 1 + 2 + 3 bo‘lsin.
+
+document.getElementById('eightteen--btn').addEventListener('click', function () {
+    let eightteenSwitch = document.getElementById('eightteen--value').value;
+    let eightteenInputValue = parseInt(document.getElementById('eightteen--input--value').value);
+    let eightteenAnswer = 0;
+
+    switch (eightteenSwitch) {
+        case "1":
+        case 1:
+            while (eightteenInputValue > 0) {
+                eightteenAnswer += eightteenInputValue % 10;
+                eightteenInputValue = Math.floor(eightteenInputValue / 10);
+            }
+            break;
+        case 2:
+        case "2":
+
+            do {
+                eightteenAnswer += eightteenInputValue % 10;
+                eightteenInputValue = Math.floor(eightteenInputValue / 10);
+            } while (eightteenInputValue > 0);
+            break;
+
+        default:
+            eightteenAnswer = "Xato qiymat kiritildi, 1 yoki 2 kiriting:";
+            break;
+    }
+
+    document.getElementById('eightteen--answer').innerHTML = "Yig'indisi :" + eightteenAnswer;
+    document.getElementById('eightteen--close').addEventListener('click', function () {
+        document.getElementById('eightteen--answer').innerHTML = "";
+    });
+});
+
+
+//  19-mashq  **Masala**: Foydalanuvchi son kiritsin. `while` sikli
+//  yordamida ushbu sonni 2 ga bo‘lib boring va natijani chop eting.
+//  Sikl son 1 dan kichik bo‘lgunga qadar davom etsin.
+
+
+document.getElementById('nineteen--btn').addEventListener('click', function () {
+    let nineteenSwitch = document.getElementById('nineteen--value').value;
+    let nineteenInputValue = parseInt(document.getElementById('nineteen--input--value').value);
+    let nineteenAnswer = " ";
+
+    switch (nineteenSwitch) {
+        case "1":
+        case 1:
+            while (nineteenInputValue > 1) {
+                nineteenAnswer += " " + nineteenInputValue / 2 + " ";
+                nineteenInputValue = nineteenInputValue / 2;
+            }
+            break;
+        case 2:
+        case "2":
+
+            do {
+                nineteenAnswer += "  " + nineteenInputValue / 2 + " ";
+                nineteenInputValue = nineteenInputValue / 2;
+            } while (nineteenInputValue > 1);
+            break;
+
+        default:
+            nineteenAnswer = "Xato qiymat kiritildi, 1 yoki 2 kiriting:";
+            break;
+    }
+
+    document.getElementById('nineteen--answer').innerHTML = nineteenAnswer;
+    document.getElementById('nineteen--close').addEventListener('click', function () {
+        document.getElementById('nineteen--answer').innerHTML = "";
+    });
+});
+
+
+// 20-mashq **Masala**: Berilgan sonning barcha raqamlarini tekshirib,
+//  faqat toq raqamlarini `while` sikli yordamida chop eting.
+
+
+document.getElementById('twenty--btn').addEventListener('click', function () {
+    let twentySwitch = document.getElementById('twenty--value').value;
+    let twentyInputValue = parseInt(document.getElementById('twenty--input--value').value);
+    let twentyAnswer = " ";
+    let twentyCheck = 0;
+
+    switch (twentySwitch) {
+        case "1":
+        case 1:
+            while (twentyInputValue > 0) {
+                twentyCheck = twentyInputValue % 10;
+                if (twentyCheck % 2 == 1) {
+                    twentyAnswer += " " + twentyCheck + "  ";
+                }
+                twentyInputValue = Math.trunc(twentyInputValue / 10);
+            }
+            break;
+        case 2:
+        case "2":
+
+            do {
+
+                twentyCheck = twentyInputValue % 10;
+                if (twentyCheck % 2 == 1) {
+                    twentyAnswer += " " + twentyCheck + "  ";
+                }
+                twentyInputValue = Math.trunc(twentyInputValue / 10);
+
+            } while (twentyInputValue > 0);
+            break;
+
+        default:
+            twentyAnswer = "Xato qiymat kiritildi, 1 yoki 2 kiriting:";
+            break;
+    }
+
+    document.getElementById('twenty--answer').innerHTML = twentyAnswer;
+    document.getElementById('twenty--close').addEventListener('click', function () {
+        document.getElementById('twenty--answer').innerHTML = "";
+    });
+});
+
+
+
+
+
+// 21-mashq **Masala**: Foydalanuvchi boshlang'ich son va yakuniy son kiritadi. 
+// `while` sikli yordamida ushbu sonlar orasidagi faqat 3 ga bo‘linadigan sonlarni 
+// chop eting. Barcha boshqa sonlarni o‘tkazib yuboring.
+
+document.getElementById('twentyone--btn').addEventListener('click', function () {
+    let twentyoneSwitch = document.getElementById('twentyone--value').value;
+    let twentyoneFirstValue = parseInt(document.getElementById('twentyone--first--value').value);
+    let twentyoneSecondValue = parseInt(document.getElementById('twentyone--second--value').value);
+
+    let twentyoneMaxValue = Math.max(twentyoneFirstValue, twentyoneSecondValue);
+    let twentyoneMinValue = Math.min(twentyoneFirstValue, twentyoneSecondValue);
+
+    let twentyoneAnswer = " ";
+    let twentyoneCounter = twentyoneMinValue;
+
+    switch (twentyoneSwitch) {
+        case "1":
+        case 1:
+
+            while (twentyoneCounter == twentyoneMaxValue) {
+                if (twentyoneCounter % 3 == 0) {
+                    twentyoneAnswer += " " + twentyoneCounter + " ";
+                }
+
+                twentyoneCounter++;
+            }
+
+            break;
+        case 2:
+        case "2":
+
+            do {
+                if (twentyoneCounter % 3 == 0) {
+                    twentyoneAnswer += " " + twentyoneCounter + " ";
+                }
+                twentyoneCounter++;
+            } while (twentyoneCounter == twentyoneMaxValue);
+            break;
+
+        default:
+            twentyoneAnswer = "Xato qiymat kiritildi, 1 yoki 2 kiriting:";
+            break;
+    }
+
+    document.getElementById('twentyone--answer').innerHTML = twentyoneAnswer;
+    document.getElementById('twentyone--close').addEventListener('click', function () {
+        document.getElementById('twentyone--answer').innerHTML = "";
+    });
+});
+
+
+
+//  22-mashq **Masala**: Foydalanuvchi biror son kiritsin. Ushbu sonning
+//  raqamlarini teskari tartibda (`1234` ni `4321` ko‘rinishida) `while`
+//  sikli yordamida chop eting.
+
+
+document.getElementById('twentytwo--btn').addEventListener('click', function () {
+    let twentytwoSwitch = document.getElementById('twentytwo--value').value;
+    let twentytwoInputValue = parseInt(document.getElementById('twentytwo--input--value').value);
+    let twentytwoAnswer = " ";
+    let twentytwoCheck = 0;
+
+    switch (twentytwoSwitch) {
+        case "1":
+        case 1:
+            while (twentytwoInputValue > 0) {
+                twentytwoCheck = twentytwoInputValue % 10;
+
+                twentytwoAnswer += " " + twentytwoCheck + "  ";
+
+                twentytwoInputValue = Math.trunc(twentytwoInputValue / 10);
+            }
+            break;
+        case 2:
+        case "2":
+
+            do {
+
+                twentytwoCheck = twentytwoInputValue % 10;
+                twentytwoAnswer += " " + twentytwoCheck + "  ";
+
+                twentytwoInputValue = Math.trunc(twentytwoInputValue / 10);
+
+            } while (twentytwoInputValue > 0);
+            break;
+
+        default:
+            twentytwoAnswer = "Xato qiymat kiritildi, 1 yoki 2 kiriting:";
+            break;
+    }
+
+    document.getElementById('twentytwo--answer').innerHTML = twentytwoAnswer;
+    document.getElementById('twentytwo--close').addEventListener('click', function () {
+        document.getElementById('twentytwo--answer').innerHTML = "";
+    });
+});
+
+
+
+
+// 23-mashq **Masala**: Foydalanuvchi berilgan son bo‘yicha fibonachchi ketma-ketligini
+//  (0, 1, 1, 2, 3, 5...) aniqlab, shu ketma-ketlikdagi sonlarni `while` sikli yordamida
+//   chop eting. Ketma-ketlikda kiritilgan son qiymatidan oshmasligi kerak.
+document.getElementById('twentythree--btn').addEventListener('click', function () {
+    let twentythreeSwitch = document.getElementById('twentythree--value').value;
+    let twentythreeInputValue = parseInt(document.getElementById('twentythree--input--value').value);
+    let twentythreeAnswer = ""; 
+    let twentythreePrev = 0; 
+    let twentythreeCurrent = 1;
+
+    twentythreeAnswer += twentythreePrev + " ";
+    twentythreeAnswer += twentythreeCurrent + " "; 
+
+    switch (twentythreeSwitch) {
+        case "1":
+        case 1:
+            while (true) {
+                let twentythreeNext = twentythreePrev + twentythreeCurrent; 
+                if (twentythreeNext > twentythreeInputValue) {
+                    break;
+                }
+                twentythreeAnswer += twentythreeNext + " ";
+                twentythreePrev = twentythreeCurrent; 
+                twentythreeCurrent = twentythreeNext; 
+            }
+            break;
+
+        case "2":
+        case "2":
+            do {
+                let twentythreeNext = twentythreePrev + twentythreeCurrent; 
+                if (twentythreeNext > twentythreeInputValue) {
+                    break;
+                }
+                twentythreeAnswer += twentythreeNext + " "; 
+                twentythreePrev = twentythreeCurrent; 
+                twentythreeCurrent = twentythreeNext;
+            } while (twentythreeInputValue > 0);
+            break;
+
+        default:
+            twentythreeAnswer = "Xato qiymat kiritildi, 1 yoki 2 kiriting:";
+            break;
+    }
+
+    document.getElementById('twentythree--answer').innerHTML = twentythreeAnswer; 
+    document.getElementById('twentythree--close').addEventListener('click', function () {
+        document.getElementById('twentythree--answer').innerHTML = "";
+    });
+});
+
+
+
+
+
+//  24-mashq **Masala**: Foydalanuvchi bir son kiritsin. Ushbu sonning barcha raqamlarini
+//  ajratib, ularning ko‘paytmasini (masalan, 234 uchun 2 * 3 * 4) `while` sikli yordamida toping.
+
+document.getElementById('twentyfour--btn').addEventListener('click', function () {
+    let twentyfourSwitch = document.getElementById('twentyfour--value').value;
+    let twentyfourInputValue = parseInt(document.getElementById('twentyfour--input--value').value);
+    let twentyfourAnswer = 1;
+    let twentyfourCheck = 0;
+
+    switch (twentyfourSwitch) {
+        case "1":
+        case 1:
+            while (twentyfourInputValue > 0) {
+                twentyfourCheck = twentyfourInputValue % 10;
+
+                twentyfourAnswer *= twentyfourCheck;
+
+                twentyfourInputValue = Math.trunc(twentyfourInputValue / 10);
+            }
+            break;
+        case 2:
+        case "2":
+
+            do {
+
+                twentyfourCheck = twentyfourInputValue % 10;
+                twentyfourAnswer *= twentyfourCheck;
+
+                twentyfourInputValue = Math.trunc(twentyfourInputValue / 10);
+
+            } while (twentyfourInputValue > 0);
+            break;
+
+        default:
+            twentyfourAnswer = "Xato qiymat kiritildi, 1 yoki 2 kiriting:";
+            break;
+    }
+
+    document.getElementById('twentyfour--answer').innerHTML ="Ko'paytmasi : "+ twentyfourAnswer;
+    document.getElementById('twentyfour--close').addEventListener('click', function () {
+        document.getElementById('twentyfour--answer').innerHTML = "";
+    });
 });
