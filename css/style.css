@@ -37,6 +37,7 @@ button {
   margin-bottom: 20px;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
+  cursor: pointer;
 }
 
 form {
@@ -81,4 +82,6 @@ span {
   font-size: 25px;
   left: 20px;
   top: 10px;
+  cursor: -webkit-grab;
+  cursor: grab;
 }
